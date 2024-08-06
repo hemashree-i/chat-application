@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="{% static 'signin.css' %}">
+</head>
+<form method="POST">
+    {% csrf_token %}
+<body>
+   <div>Username</div> 
+   <input type="text" name="username" size="30" pattern="[a-z0-9]{1,100}" title="Username must be lowercase letters and/or digits." required><br/>
+   <div>Password</div>
+   <input type="password" name="Password" size="30"><br/>
+   <div>Re-enter the password</div>
+   <input type="password" name="password1" size="30"><br/>
+   <button type="submit" name="signin"> Sign Up</button><br/>
+   <button><a style="text-decoration:none" href="{% url 'index' %}">Login</a></button>
+</body>
+</form>
+</html>

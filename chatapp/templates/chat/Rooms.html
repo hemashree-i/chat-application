@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Rooms</title>
+    <link rel="stylesheet" href="{% static 'Rooms.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Chat Rooms</h1>
+            <p>Username: {{ name }}</p>
+        </header>
+
+        <main class="room-list">
+            {% for i in rooms %}
+                <div class="room-item">
+                    <a href="{% url 'room' i.Room_name name %}" class="room-link">Chat with user {{ i.Room_name }}</a>
+                </div>
+            {% endfor %}
+        </main>
+    </div>
+</body>
+</html>
